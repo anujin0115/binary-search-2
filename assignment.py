@@ -1,6 +1,5 @@
 # You can remove 'pass' if you written code in the function
 # Exercise 1
-
 def find_closest(data, target):
     low=0
     high=len(data)-1
@@ -17,19 +16,22 @@ def find_closest(data, target):
         elif data[ mid ] < target:
 
             if mid + 1 < len(data) and data[mid + 1] > target:
-                if abs(data[mid] - target) <= abs(data[mid+1] - target):
+                if abs(data[mid] - target) < abs(data[mid+1] - target):
                     return data[ mid ]
+                elif abs(data[mid] - target) == abs(data[mid+1] - target):
+                    return data[mid]
                 else:
                     return data [ mid+1 ]
             low = mid + 1
         else:
             if  mid-1>=0 and data[ mid-1 ] < target :
-                if abs(data[mid] - target) <= abs(data[mid-1] - target):
+                if abs(data[mid] - target) < abs(data[mid-1] - target):
                     return data[ mid ]
+                elif abs(data[mid] - target) == abs(data[mid+1] - target):
+                    return data[mid-1]
                 else:
                     return data [ mid-1 ]
             high=mid-1
-
 
 # Exercise 2
 def integer_sqrt(n):
