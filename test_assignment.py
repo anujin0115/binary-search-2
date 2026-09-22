@@ -2,7 +2,7 @@ import time
 
 import pytest
 
-from assignment import find_closest, integer_sqrt, find_missing
+from assignment import find_closest, integer_sqrt
 
 
 class CountingList(list):
