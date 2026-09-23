@@ -37,4 +37,22 @@ def find_closest(data, target):
 def integer_sqrt(n):
     # Write your code here
     pass
+def integer_sqrt(n):
+    low = 0
+    high = n
+    answer = 0
+
+    while low <= high:
+        mid = (low + high) // 2
+        
+        if mid * mid <= n:
+            answer = mid      
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return answer
+
+
+
 
